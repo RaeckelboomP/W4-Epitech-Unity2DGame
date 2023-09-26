@@ -5,44 +5,37 @@ using UnityEngine.Events;
 
 public class TankController : MonoBehaviour
 {
-    public Rigidbody2D rigidBody2D;
-    private Vector2 movementVector;
-    public float maxSpeed = 10;
-    public float rotationSpeed = 100;
-    public float turretRotationSpeed = 150;
+    public TankMover tankMover;
+    public AimTurret aimTurret;
+    public Turret[] turrets;
 
-    public Transform turretParent;
-
-    private void Awake()
-    {
-        rigidBody2D = GetComponent<Rigidbody2D>();
+    private void Awake() {
+        if(tankMover == null)
+            tankMover =
+              GetComponentInChildren<TankMover>();
+        if(aimTurret == null)
+            aimTurret =
+              GetComponentInChildren<AimTurret>();
+        if(turrets == null || turrets.Length == 0) {
+            turrets = GetComponentsInChildren<Turret>();
+        }
     }
 
     public void HandleShoot()
     {
-        Debug.Log("Shooting");
+        foreach (var turret in turrets)
+        {
+            turret.Shoot();
+        }
     }
 
     public void HandleMoveBody(Vector2 movementVector)
     {
-        this.movementVector = movementVector;
+        tankMover.Move(movementVector);
     }
 
     public void HandleTurretMovement(Vector2 pointerPosition)
     {
-        // try to change Vector3 to Vector2 after test
-        var turretDirection = (Vector3)pointerPosition - turretParent.position;
-
-        var desiredAngle = Mathf.Atan2(turretDirection.y, turretDirection.x) * Mathf.Rad2Deg; //Mathf.Rad2Deg convert Radiants to Degrees
-
-        var rotationStep = turretRotationSpeed * Time.deltaTime;
-
-        turretParent.rotation = Quaternion.RotateTowards(turretParent.rotation, Quaternion.Euler(0, 0, desiredAngle-90), rotationStep);
-    }
-
-    private void FixedUpdate()
-    {
-        rigidBody2D.velocity = (Vector2)transform.up * movementVector.y * maxSpeed * Time.fixedDeltaTime;
-        rigidBody2D.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -movementVector.x * rotationSpeed * Time.fixedDeltaTime));
+        aimTurret.Aim(pointerPosition);
     }
 }
