@@ -272,8 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretBarrels:
   - {fileID: 4008788386532792452}
-  bulletPrefab: {fileID: 6380611792231050259, guid: 6fa505a57ef570048a45152519c391aa, type: 3}
-  reloadDelay: 1
+  turretData: {fileID: 11400000, guid: 6862bc763337d054b8fb8ae718c0623c, type: 2}
+  bulletPoolCount: 10
 --- !u!114 &4138530098236468577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,9 +433,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody2D: {fileID: 0}
-  maxSpeed: 70
-  rotationSpeed: 200
-  acceleration: 70
-  deacceleration: 50
+  movementData: {fileID: 11400000, guid: 9fb0fcc463275b141a5d10d0f83b45e7, type: 2}
   currentSpeed: 0
   currentForwardDirection: 1
