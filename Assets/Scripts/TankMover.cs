@@ -22,7 +22,6 @@ public class TankMover : MonoBehaviour
 
     public void Move(Vector2 movementVector) {
         this.movementVector = movementVector;
-        Debug.Log("Vector : " + movementVector);
         CalculateSpeed(movementVector);
         if (movementVector.y > 0)
             currentForwardDirection = 1;

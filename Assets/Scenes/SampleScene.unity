@@ -422,23 +422,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8572087800467319132, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8572087800467319132, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1457464424}
+      objectReference: {fileID: 1457464430}
     - target: {fileID: 8572087800467319132, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8572087800467319132, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: DestroyHelper
       objectReference: {fileID: 0}
     - target: {fileID: 8572087800467319132, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: DestroyUtil, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8572087800467319132, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -451,7 +451,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2046093722320508746, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1457464430}
   m_SourcePrefab: {fileID: 100100000, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
 --- !u!1 &1022935230
 GameObject:
@@ -12795,6 +12798,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2046093722320508746, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
   m_PrefabInstance: {fileID: 767632543}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1457464430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457464424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c01b6c429a01c44a2bea4ebca34684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1610116206
 GameObject:
   m_ObjectHideFlags: 0
@@ -18686,6 +18701,10 @@ PrefabInstance:
     - target: {fileID: 2046093722320508746, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: m_Name
       value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386881831137186181, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
+      propertyPath: bulletPoolCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7527284152862695797, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: m_LocalPosition.x
