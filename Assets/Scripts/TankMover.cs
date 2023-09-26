@@ -1,18 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TankMover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Vector2 movementVector;
+    public Rigidbody2D rigidBody2D;
+    public float maxSpeed = 10;
+    public float rotationSpeed = 100;
+    public float acceleration = 70;
+    public float deacceleration = 50;
+    public float currentSpeed = 0;
+    public float currentForwardDirection = 1;
+
+
+    private void Awake()
     {
-        
+        rigidBody2D = GetComponentInParent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move(Vector2 movementVector) {
+        this.movementVector = movementVector;
+        Debug.Log("Vector : " + movementVector);
+        CalculateSpeed(movementVector);
+        if (movementVector.y > 0)
+            currentForwardDirection = 1;
+        else if (movementVector.y < 0)
+            currentForwardDirection = -1;
+    }
+
+    private void CalculateSpeed(Vector2 movementVector)
     {
-        
+        if (Mathf.Abs(movementVector.y) > 0) {
+            currentSpeed += acceleration * Time.deltaTime;
+        } else {
+            currentSpeed -= deacceleration * Time.deltaTime;
+        }
+        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+    }
+
+    private void FixedUpdate()
+    {
+        rigidBody2D.velocity = (Vector2)transform.up * currentSpeed * currentForwardDirection * Time.fixedDeltaTime;
+        rigidBody2D.MoveRotation(transform.rotation *
+        Quaternion.Euler(0, 0, -movementVector.x * rotationSpeed * Time.fixedDeltaTime));
     }
 }
