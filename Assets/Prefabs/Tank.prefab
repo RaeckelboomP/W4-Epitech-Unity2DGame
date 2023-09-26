@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7016918158520195571}
   - component: {fileID: 894651122175807604}
   - component: {fileID: 8572087800467319132}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad87d124e961e747bdec6922eedea6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  MaxHealth: 100
+  health: 0
 --- !u!1 &2740018646606796665
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4008788386532792452}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +182,7 @@ GameObject:
   - component: {fileID: 7882463179179034068}
   - component: {fileID: 5407283176441331398}
   - component: {fileID: 3386881831137186181}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TankTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6604366035265777350}
   - component: {fileID: 5649506734434592050}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TankTurretParent
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -316,7 +330,7 @@ GameObject:
   - component: {fileID: 114252858274511801}
   - component: {fileID: 8001419664343161320}
   - component: {fileID: 4145005255176121195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TankBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
