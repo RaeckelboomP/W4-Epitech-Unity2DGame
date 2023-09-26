@@ -18706,6 +18706,10 @@ PrefabInstance:
       propertyPath: bulletPoolCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4145005255176121195, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
+      propertyPath: movementData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9fb0fcc463275b141a5d10d0f83b45e7, type: 2}
     - target: {fileID: 7527284152862695797, guid: 760bf53211ab038459a42b195cb32a30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
